@@ -11,7 +11,7 @@
 <input placeholder="Evento KeyDown" type="text" (keydown)="onKeyDown($event)" [value]="userName">
 <strong>Valor da variável 'userName':</strong> {{userName}}
 <br/>
-<input placeholder="Evento KeyDown" type="text" on-keydown="onKeyDown($event)" value="{{userName}}">
+<input placeholder="Evento KeyDown" type="text" [(ngModel)]="userName" >
 <strong>Valor da variável 'userName':</strong> {{userName}}
 
 <br><br>
@@ -20,7 +20,7 @@
 <strong>Valor da variável 'userEmail':</strong> {{userEmail}}
 <br/>
 
-<input placeholder="Evento KeyUp" type="text" on-keyup="onKeyUp($event)" value="{{userEmail}}">
+<input placeholder="Evento KeyUp" type="text">
 <strong [class.bg-red]="mouseClickCount > 3">Valor da variável 'userEmail':</strong> {{userEmail}}
 
 <style>
