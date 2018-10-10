@@ -8,12 +8,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { TasksDetailComponent } from './tasks/task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TasksComponent
+    TasksComponent,
+    TasksDetailComponent
   ],
   imports: [
     AngularFontAwesomeModule,
