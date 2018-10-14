@@ -3,12 +3,18 @@
 <table class="table">
   <thead>
     <th>Tarefas Importantes</th>
+    <th>Ações</th>
   </thead>
   <tbody>
     <tr *ngFor="let task of tasks">
       <td>
         {{task.title}}
       </td>
+      <td>
+        <a [routerLink]="['/tasks', task.id]" class="btn btn-info">
+          <fa name="search-plus"></fa> detalhes
+        </a>
+      </td>
     </tr>
-  </tbody>  
+  </tbody>
 </table>
