@@ -9,15 +9,58 @@ export class LearningObservables {
 
     // CRIANDO UM OBJETO OBSERVADOR
     let observer = {
-      name: "Nome qualquer",
-      email: "email@qualquer",
-
-      nameAndEmail: function(){
-        return this.name + " - "+ this.email
+      next: function(newData){
+        console.log("CHAMOU O MÉTODO NEXT E PASSOU COMO PARAMETRO O 'newData' => ", newData)
+      },
+      error: function(errorData){
+        console.log("CHAMOU O MÉTODO ERROR E PASSOU COMO PARAMETRO O 'errorData' => ", errorData)
+      },
+      complete: function(){
+        console.log("CHAMOU O MÉTODO COMPLETE E ENCERROU")
       }
-    }
+    };
 
-    console.log(observer.nameAndEmail);
+    // CRIANDO UM OBJETO OBSERVADO E PASSANDO UM OBSERVADOR COMO PARAMETRO
+    // this.http.get("api/tasks")
+    //   .subscribe(observer);
+
+    // this.http.get("api/tasks")
+    //   .subscribe({
+    //     next: function(newData){
+    //       console.log("CHAMOU O MÉTODO NEXT E PASSOU COMO PARAMETRO O 'newData' => ", newData)
+    //     },
+    //     error: function(errorData){
+    //       console.log("CHAMOU O MÉTODO ERROR E PASSOU COMO PARAMETRO O 'errorData' => ", errorData)
+    //     },
+    //     complete: function(){
+    //       console.log("CHAMOU O MÉTODO COMPLETE E ENCERROU")
+    //     }
+    //   });
+
+    // this.http.get("api/tasks")
+    //   .subscribe(
+    //     function(newData){
+    //       console.log("CHAMOU O MÉTODO NEXT E PASSOU COMO PARAMETRO O 'newData' => ", newData)
+    //     },
+    //     function(errorData){
+    //       console.log("CHAMOU O MÉTODO ERROR E PASSOU COMO PARAMETRO O 'errorData' => ", errorData)
+    //     },
+    //     function(){
+    //       console.log("CHAMOU O MÉTODO COMPLETE E ENCERROU")
+    //     }
+    //   );
+
+    // this.http.get("api/tasks")
+    //   .subscribe(
+    //     newData => console.log("CHAMOU O MÉTODO NEXT E PASSOU COMO PARAMETRO O 'newData' => ", newData),
+    //     errorData => console.log("CHAMOU O MÉTODO ERROR E PASSOU COMO PARAMETRO O 'errorData' => ", errorData),
+    //     () => console.log("CHAMOU O MÉTODO COMPLETE E ENCERROU")
+    //   );
+
+    this.http.get("api/tasks")
+      .subscribe(newData => {
+          console.log("CHAMOU O MÉTODO NEXT E PASSOU COMO PARAMETRO O 'newData' => ", newData)
+        });
 
   }
 
