@@ -36,7 +36,7 @@ export class TaskService{
       .map((response: Response) => response.json().data as Task);
   }
 
-  public createTaks(task: Task): Observable<Task>{
+  public createTask(task: Task): Observable<Task>{
     let url = this.tasksUrl;
     let body = JSON.stringify(task);
     let headers = new Headers({'Content-type': 'application/json'});
