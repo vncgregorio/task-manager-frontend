@@ -29,7 +29,7 @@
         <a [routerLink]="['/tasks', task.id]" class="btn btn-info">
           <fa name="search-plus"></fa> detalhes
         </a>
-        <button class="btn btn-danger">
+        <button class="btn btn-danger" (click)="deleteTask(task)">
           <fa name="trash"></fa> excluir
         </button>
       </td>
